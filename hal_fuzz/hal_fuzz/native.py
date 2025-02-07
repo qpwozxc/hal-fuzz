@@ -215,7 +215,7 @@ def add_timer(reload_val, callback=None, isr_num=IRQ_NOT_USED):
     global timer_cb_user_data
     global native_lib
     
-    #assert (timer_cb_wrapper is not None and timer_cb_user_data is not None)
+    #assert (timer_cb_wrapper None and timer_cb_user_data None)
     if timer_cb_wrapper is None or timer_cb_user_data is None:
         print("WARNING: You just tried to use a timer, and timers are not enabled! Try adding `use_timers: True` and `use_nvic: True` to your firmware's YAML file.")
         sys.exit(1)
