@@ -216,7 +216,7 @@ def add_timer(reload_val, callback=None, isr_num=IRQ_NOT_USED):
     global native_lib
     
     #assert (timer_cb_wrapper is not None and timer_cb_user_data is not None)
-    if timer_cb_wrapper is not None or timer_cb_user_data is not None:
+    if timer_cb_wrapper is None or timer_cb_user_data is None:
         print("WARNING: You just tried to use a timer, and timers are not enabled! Try adding `use_timers: True` and `use_nvic: True` to your firmware's YAML file.")
         sys.exit(1)
     # While technically allowed in the C code, invoking a callback and pending an interrupt at the same time is nothing we would like to support
